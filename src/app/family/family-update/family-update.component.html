@@ -1,0 +1,19 @@
+<!-- <p>
+  family-update works!
+</p> -->
+<!-- ↓お手本マルコピ -->
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+    <!-- ↓名前を双方向バインディングにする。(スクリプト側でも、view側でも変更できるように)-->
+    <input type="text" name="name" [(ngModel)]=name required placeholder="name">
+    <!-- ↓関係性の選択。(これも双方向バインディング) -->
+    <select name="relationship" [(ngModel)]=relationship required placeholder="relationship">
+      <!-- ↓選択肢を持ってくる -->
+      <option *ngFor="let relationship of relationships" value="{{relationship.key}}">
+        {{relationship.value}}
+      </option>
+    </select>
+    <!-- ↓誕生日もinput -->
+    <input type="date" name="birthday" [ngModel]=birthdayFormat required placeholder="birthday">
+    <!-- ↓更新ボタンでデータを送信する -->
+    <button type=submit [disabled]="!f.form.valid">更新</button>
+  </form>

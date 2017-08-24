@@ -1,0 +1,18 @@
+<!-- <p>
+  family-detail works!
+</p> -->
+<!-- ↓以下お手本マルコピ -->
+<!-- 登録ボタンが押された時、入力項目をセットする。 -->
+<div [hidden]="myVar" (click)="onClick()">
+    <span class="name">{{name}}</span>
+    <span class="relationship">{{relationship | relationshipValue}}</span>
+    <span class="birthday">{{birthday | date:'yMd'}}</span>
+  </div>
+
+  <!-- updateタグを呼び出す、 -->
+  <fp-family-update [hidden]="!myVar"
+    [rownum]='rownum'
+    [name]='name'
+    [relationship]='relationship'
+    [birthday]='birthday'
+  ></fp-family-update>

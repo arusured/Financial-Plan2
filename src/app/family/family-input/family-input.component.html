@@ -1,0 +1,14 @@
+<p>
+  家族構成を入力してください。
+  <br>氏名、続柄、誕生日
+</p>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <input type="text" name="name" ngModel required placeholder="name">
+  <select name="relationship" ngModel required placeholder="relationship">
+    <option *ngFor="let relationship of relationships" value="{{relationship.key}}">
+      {{relationship.value}}
+    </option>
+  </select>
+  <input type="date" name="birthday" ngModel required placeholder="birthday">
+  <button type=submit [disabled]="!f.form.valid">登録</button>
+</form>

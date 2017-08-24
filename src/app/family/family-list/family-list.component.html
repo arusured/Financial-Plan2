@@ -1,0 +1,13 @@
+<!-- <p>
+  family-list works!
+</p> -->
+<!-- ↓お手本マルコピ -->
+<div *ngFor="let human of family; let i = index">
+  <!-- ↓詳細のコンポーネント呼出し -->
+    <fp-family-detail
+      [rownum]="i"
+      [name]="human.name"
+      [relationship]="human.relationship"
+      [birthday]="human.birthday">
+    </fp-family-detail>
+  </div>
