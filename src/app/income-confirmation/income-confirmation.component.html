@@ -1,3 +1,14 @@
 <p>
-  income-confirmation works!
+  年間の収入と支出を記入してください。(年間貯蓄可能額を表示します。)
 </p>
+<fp-income></fp-income>
+<fp-expense></fp-expense>
+
+<hr>
+<div class="saving">
+<div class="title">1年間に貯蓄できる額<div class="radius-white">A</div>-<div class="radius-white">B</div></div>
+<div class="total">
+  <span>{{calcSaving()}}</span>
+  <span class="unit">万円</span>
+</div>
+</div>
